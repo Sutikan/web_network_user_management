@@ -63,17 +63,28 @@
 												<th>Username</th>
 												<th>Name</th>
 												<th>Lastname</th>
+												<th>Group</th>
 												<th>Manage</th>
 											</thead>
 											<tbody>
 												<?php 
 													$showdata = mysqli_query($con, "SELECT * FROM radcheck, member WHERE radcheck.username = member.username AND radcheck.username != '$username' AND attribute != 'Cleartext-Password'"); 
-													while ($show = mysqli_fetch_array($showdata)) { ?>
+													while ($show = mysqli_fetch_array($showdata)) {
+													$sUsername = $show['username']; ?>
 													<tr class="bg-white">
 														<td><?php echo $show['id']; ?></td>
-														<td><?php echo $show['username']; ?></td>
+														<td><?php echo $sUsername ?></td>
 														<td><?php echo $show['m_name']; ?></td>
 														<td><?php echo $show['m_lastname']; ?></td>
+														<td><?php $group = mysqli_query($con, "SELECT * FROM radusergroup WHERE username = '$sUsername'");
+																  $checkG2 = mysqli_fetch_assoc($group);
+																  $checkG = mysqli_num_rows($group);
+																  if ($checkG === 1) {
+																   	echo $checkG2['groupname'];
+																   } else {
+																   	echo " - ";
+																   } ?>
+														</td>
 														<td><button class="btn btn-block btn-sm btn-info font-weight-bold" type="button" data-toggle="modal" data-target="#approU<?php echo $show['id'] ?>">Approve</button></td>
 													</tr>
 													<div class="modal fade" id="approU<?php echo $show['id'] ?>">
@@ -158,6 +169,7 @@
 												<th>Username</th>
 												<th>Name</th>
 												<th>Lastname</th>
+												<th>Group</th>
 												<th>Manage</th>
 											</thead>
 											<tbody>
@@ -167,9 +179,18 @@
 														$sUsername = $show['username']; ?>
 													<tr class="bg-white">
 														<td><?php echo $show['id']; ?></td>
-														<td><?php echo $show['username']; ?></td>
+														<td><?php echo $sUsername; ?></td>
 														<td><?php echo $show['m_name']; ?></td>
 														<td><?php echo $show['m_lastname']; ?></td>
+														<td><?php $group = mysqli_query($con, "SELECT * FROM radusergroup WHERE username = '$sUsername'");
+																  $checkG2 = mysqli_fetch_assoc($group);
+																  $checkG = mysqli_num_rows($group);
+																  if ($checkG === 1) {
+																   	echo $checkG2['groupname'];
+																   } else {
+																   	echo " - ";
+																   } ?>
+														</td>
 														<td><button class="btn btn-block btn-sm btn-secondary font-weight-bold" type="button" data-toggle="modal" data-target="#approU<?php echo $show['id'] ?>">Suspend</button></td>
 													</tr>
 													<div class="modal fade" id="approU<?php echo $show['id'] ?>">
