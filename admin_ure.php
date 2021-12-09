@@ -62,8 +62,10 @@
 													 	echo "-";
 													 } ?></td>
 													<td>
-														<button class="btn btn-sm btn-info font-weight-bold px-3" type="button" data-toggle="modal" data-target="#upU<?php echo $show['id'] ?>">Edit</button>
-														<button class="btn btn-sm btn-secondary font-weight-bold" type="button" data-toggle="modal" data-target="#delU<?php echo $show['id'] ?>">Delete</button>
+														<div class="btn-group btn-group-sm">
+															<button class="btn btn-info font-weight-bold px-3" type="button" data-toggle="modal" data-target="#upU<?php echo $show['id'] ?>">Edit</button>
+															<button class="btn btn-secondary font-weight-bold" type="button" data-toggle="modal" data-target="#delU<?php echo $show['id'] ?>">Delete</button>
+														</div>
 													</td>
 												</tr>
 												<div class="modal fade" id="upU<?php echo $show['id'] ?>">
