@@ -85,13 +85,13 @@
 																   	echo " - ";
 																   } ?>
 														</td>
-														<td><button class="btn btn-block btn-sm btn-info font-weight-bold" type="button" data-toggle="modal" data-target="#approU<?php echo $show['id'] ?>">Approve</button></td>
+														<td><button class="btn btn-block btn-sm btn-warning font-weight-bold" type="button" data-toggle="modal" data-target="#approU<?php echo $show['id'] ?>">Approve</button></td>
 													</tr>
 													<div class="modal fade" id="approU<?php echo $show['id'] ?>">
 														<div class="modal-dialog modal-dialog-centered">
 															<div class="modal-content">
 																<form method="post">
-																	<div class="modal-header bg-info text-light">
+																	<div class="modal-header bg-warning text-light">
 																		<h4 class="modal-title">Approve User</h4>
 																		<button class="close" type="button" data-dismiss="modal">&times;</button>
 																	</div>
@@ -126,7 +126,7 @@
 																	</div>
 																	<div class="modal-footer">
 																		<input type="hidden" name="app_username" value="<?php echo $show['username'] ?>">
-																		<button class="btn btn-info font-weight-bold" type="submit" name="appro_U">Approve</button>
+																		<button class="btn btn-warning font-weight-bold" type="submit" name="appro_U">Approve</button>
 																		<button class="btn btn-light font-weight-bold" type="button" data-dismiss="modal">Cancel</button>
 																	</div>
 																</form>
