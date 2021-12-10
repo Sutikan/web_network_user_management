@@ -62,8 +62,8 @@
 													 	echo "-";
 													 } ?></td>
 													<td>
-														<div class="btn-group btn-group-sm">
-															<button class="btn btn-info font-weight-bold px-3" type="button" data-toggle="modal" data-target="#upU<?php echo $show['id'] ?>">Edit</button>
+														<div class="btn-group btn-group-sm btn-block">
+															<button class="btn btn-warning font-weight-bold px-3" type="button" data-toggle="modal" data-target="#upU<?php echo $show['id'] ?>">Edit</button>
 															<button class="btn btn-secondary font-weight-bold" type="button" data-toggle="modal" data-target="#delU<?php echo $show['id'] ?>">Delete</button>
 														</div>
 													</td>
@@ -72,7 +72,7 @@
 													<div class="modal-dialog modal-dialog-centered">
 														<div class="modal-content">
 															<form method="post">
-																<div class="modal-header bg-info text-light">
+																<div class="modal-header bg-warning text-light">
 																	<h4 class="modal-title">Update User</h4>
 																	<button class="close" type="button" data-dismiss="modal">&times;</button>
 																</div>
@@ -109,7 +109,7 @@
 																</div>
 																<div class="modal-footer">
 																	<input type="hidden" name="up_username" value="<?php echo $show['username'] ?>">
-																	<button class="btn btn-info font-weight-bold" type="submit" name="up_U">Update</button>
+																	<button class="btn btn-warning font-weight-bold" type="submit" name="up_U">Update</button>
 																	<button class="btn btn-light font-weight-bold" type="button" data-dismiss="modal">Cancel</button>
 																</div>
 															</form>
