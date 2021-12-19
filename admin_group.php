@@ -80,7 +80,7 @@
 													$gr_down = $_POST['gr_down'];
 													$gr_up = $_POST['gr_up'];
 
-													$genGroup = mysqli_query($con, "INSERT INTO radgroupcheck (groupname, attribute, op, value) VALUES ('$gr_name', 'Auth-Type', ':=', 'Local')");
+													$genGroup = mysqli_query($con, "INSERT INTO radgroupcheck (groupname, attribute, op, value) VALUES ('$gr_name', 'Auth-Type', ':=', 'Accept')");
 													$genGroup = mysqli_query($con, "INSERT INTO radgroupcheck (groupname, attribute, op, value) VALUES ('$gr_name', 'Simultaneous-Use', ':=', '$gr_use')");
 													$genGroup = mysqli_query($con, "INSERT INTO radgroupreply (groupname, attribute, op, value) VALUES ('$gr_name', 'Acct-Interim-Interval', ':=', '60')");
 													$genGroup = mysqli_query($con, "INSERT INTO radgroupreply (groupname, attribute, op, value) VALUES ('$gr_name', 'Idle-Timeout', ':=', '$gr_idle')");
